@@ -57,11 +57,11 @@ I ended up pivoting by reviewing the provided code, and starting building from t
 Currently, I am working on a simple Demo game that implements in-game gravity, user input, and jumping. At the moment, it does not contain any of the detailed graphics. It also does not implement a more detailed RAM, bitmap, or a single cycle CPU. 
 
 The image below shows the planned layout for the demo.
-![Game_layout](https://github.com/Kristtiya/ArcadeProject/blob/master/Screenshot%20from%202019-12-04%2016-44-29.PNG "Game Layout")
+![Game_layout](https://github.com/Kristtiya/ArcadeProject/blob/master/Screenshot%20from%202019-12-04%2016-44-29.png "Game Layout")
 
 As of now, I have complete the MVP of this 2 week sprint as the game takes in user input and can control an object on the screen. My goal for the next week is to polish the game even more and get gravity fixed even more.
 At the moment, there is only the main sprite, a single platform, and the main border as shown in the image below.
-![Demo_Game](https://github.com/Kristtiya/ArcadeProject/blob/master/demo.PNG "Version 1 of Daikon Demo")
+![Demo_Game](https://github.com/Kristtiya/ArcadeProject/blob/master/demo.png "Version 1 of Daikon Demo")
 
 The main issue at the moment is trying to get the character to be pulled to the ground without collision glitching. The sprite can take user inputs such as moving left and right, and going upwards when jumping. With the right momentum if a jump is made the character does move at an angle. It does have trouble coming back down like normal gravity however without having hectic collision glitching.
 
