@@ -57,10 +57,35 @@ I ended up pivoting by reviewing the provided code, and starting building from t
 Currently, I am working on a simple Demo game that implements in-game gravity, user input, and jumping. At the moment, it does not contain any of the detailed graphics. It also does not implement a more detailed RAM, bitmap, or a single cycle CPU. 
 
 The image below shows the planned layout for the demo.
-![Layout](https://github.com/Kristtiya/ArcadeProject/blob/master/Screenshot%20from%202019-12-04%2016-44-29.png "Game Layout")
+![Game_layout](https://github.com/Kristtiya/ArcadeProject/blob/master/Screenshot%20from%202019-12-04%2016-44-29.png "Game Layout")
 
 As of now, I have complete the MVP of this 2 week sprint as the game takes in user input and can control an object on the screen. My goal for the next week is to polish the game even more and get gravity fixed even more.
 At the moment, there is only the main sprite, a single platform, and the main border as shown in the image below.
-![Layout](https://github.com/Kristtiya/ArcadeProject/blob/master/demo.png "Version 1 of Daikon Demo")
+![Demo_Game](https://github.com/Kristtiya/ArcadeProject/blob/master/demo.png "Version 1 of Daikon Demo")
 
 The main issue at the moment is trying to get the character to be pulled to the ground without collision glitching. The sprite can take user inputs such as moving left and right, and going upwards when jumping. With the right momentum if a jump is made the character does move at an angle. It does have trouble coming back down like normal gravity however without having hectic collision glitching.
+
+### Starting your Journey
+I recommend the using the emulator mentioned above because it does provide a lot of demo programs and examples that can be used to learn more about verilog and also how to make hardware-based games. The book is also helpful for beginners like me, but if you are knowledgible about computers already then you likely will not need it.
+All of my current progress can be found in my [repository](https://github.com/Kristtiya/Games-in-Verilog)
+
+## Running my current Demo Programs:
+In order to run the files go to https://8bitworkshop.com/v3.4.2/?file=ball_paddle.v&platform=verilog
+
+This emulator saves progress on your own system, so in order to test my files, you will have to do the following steps:
+
+    - Click the File dropdown and select New Project
+    - Name it the name of the demo you would like to test
+        at the moment there are only 2: BrickSmash.v DaikonDemo.v
+    - Upload the test files from the repository
+    - Press the play button (triangle) to see the program run!
+
+***Make sure to have the Games-in-Verilog Repository cloned and updated just in case new changes are made!***
+
+## Making your own Game with the Emulator
+
+It is pretty straightforward as the emulator works like any other editor. Debugging is easier as it pinpoints bugs and specifies them much better than other editors. The only issue is it is slower due to it also being an emulator, it does not support all syntaxes (though the list of unsupported is very very small) and it is hard to make the code look nice.
+
+It can be easier to use another editor, then paste progress code along the way and debug in the emulator.
+
+The games themselves can be programmed using verilog, though external files formats can be used like .json if you'd like to make your own assembly code.
