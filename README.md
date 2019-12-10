@@ -1,13 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome to the Arcade Project!
 
-You can use the [editor on GitHub](https://github.com/Kristtiya/ArcadeProject.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can access the repository here [on GitHub](https://github.com/Kristtiya/Games-in-Verilog) to view current progress on the different games we are working on!
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### The Go
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+The goal of this project is to understand how hardware-based games work. Games 
 ```markdown
 Syntax highlighted code block
 
