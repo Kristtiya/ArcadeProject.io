@@ -1,0 +1,4 @@
+The current issue:
+Getting Key inputs. Brrrrr.
+I currently have an implementation that uses "getchar" but it does
+not seem to take effect. Will have to see what other inputs I.

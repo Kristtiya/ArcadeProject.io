@@ -1,0 +1,19 @@
+What Happens:
+- snake represented by S
+- Fruit represented by O
+- Snake moves with W, A, S, D
+- Fruit = +10 in score
+- Fruit generates at random points on map
+- When snake touches itself game over
+- when snaoke touches wall game over
+
+
+Game Functions needed:
+- Boundary detection
+- Snake body detection
+- Food generation
+- Display refresh
+- Keyboard input
+- Snake body generation
+
+_____________________________________________________
