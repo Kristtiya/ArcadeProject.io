@@ -3,8 +3,11 @@ import random
 
 pygame.init()
 
-width,height = 800, 800 # Window Dimensions
-p_height, p_width = 20,20 #Pixel size
+
+p_height, p_width = 20,20 #Pixel size+
+#deco_x, deco_y = 800 + p_width, 800+p_height
+width,height = 800, 800  # Window Dimensions
+
 color = (255, 255, 255) #color white
 window = pygame.display.set_mode([width,height]) #Create Window
 
@@ -30,12 +33,12 @@ def main():
     #Run until user quits
     
     while running:
-    
+        
         window.fill((0,0,0))
         if food_present == 0:
             del dot
             dot = generate_food()
-
+        collision(snake.head_x, snake.head_y,dot.x, dot.y)
         # move_snake(object_direction, object_h_v, snake.head_x, snake.head_y)
         if object_h_v == 0:
             snake.head_x += (object_direction * snake_step)
@@ -44,7 +47,7 @@ def main():
         
         food_object = (dot.x, dot.y,p_width,p_height)
         snake_object = (snake.head_x, snake.head_y,p_width,p_height)
-        collision(snake.head_x, snake.head_y,dot.x, dot.y)
+        
         
         
         generate_graphics(height, width, p_height,p_width,snake_object,food_object)
@@ -77,10 +80,12 @@ def printparty():
 
 
 def generate_graphics(border_height, border_width, pixel_height, pixel_width,player,food_obj):
-    pygame.draw.rect(window, color, player) #draw_head
-    for i in range(border_width):
+
+    pygame.draw.rect(window, color, player) #draw snake head
+
+    for i in range(border_width): #Draw game border
         for j in range (border_height):
-            ## Generate border
+
             if i == (border_width - pixel_width) or i == 0 or j == (border_height - pixel_height) or j == 0:
                 border = (i,j,pixel_width,pixel_height)
                 pygame.draw.rect(window,color,border) 
@@ -106,14 +111,27 @@ def collision(object_x, object_y, food_x, food_y):
     global snake_step
     global game_over 
     global food_present
+    global object_direction
+    global object_h_v
 
     #need to figure out how to allow snake to slither along border
-    if object_x == p_width  or ((object_x + p_width) == (width - p_width) or
-        object_y == p_height or (object_y + p_height) == (height - p_height)):
+    if (object_x == p_width) and object_direction == -1 and object_h_v == 0: # left border
+        snake_step = 0
+        game_over = 1
+    
+    elif ((object_x + p_width) == (width - p_width)) and object_direction == 1 and object_h_v == 0: # right border
         snake_step = 0
         game_over = 1
 
-    if object_x == food_x and object_y == food_y:
+    elif (object_y == p_height) and object_direction == -1 and object_h_v == 1: # upper border
+        snake_step = 0
+        game_over = 1
+    
+    elif ((object_y + p_height) == (height - p_height)) and object_direction == 1 and object_h_v == 1: # lower border
+        snake_step = 0
+        game_over = 1
+
+    elif object_x == food_x and object_y == food_y:
         food_present = 0
 
 
