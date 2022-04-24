@@ -5,28 +5,32 @@ import random
 pygame.init()
 pygame.font.init()
 
+
+
+
+
 # -- Window and game border
 p_height, p_width = 20,20 #Pixel dimensions
 width,height = 800, 800  # Window Dimensions
 window = pygame.display.set_mode([width,height+ 100]) #Create Window
 active_vert = height - p_height
 active_hoz = width - p_width
-border = (0,0,p_width,p_height) # Active game border
-
 
 # -- Color and Text
-color = (255, 255, 255)                                #color white
+color = (255, 255, 255) #color white
+
 POKEFONT32 = pygame.font.Font("PokemonGBfont.ttf", 32) #Font size 32
 POKEFONT50 = pygame.font.Font("PokemonGBfont.ttf", 50) #Font size 50
 
-# -- Game Mechanic Parameters
-snake_step = p_height           # snake step size
-object_direction = 1            # 1 pos direction, -1 neg direction
-object_h_v = 0                  # 0 is horizontal, 1 is vertical
+# -- 
+snake_step = p_height #snake step size
+object_direction = 1 # 1 pos direction, -1 neg direction
+object_h_v = 0 # 0 is horizontal, 1 is vertical
+border = (0,0,p_width,p_height)
+game_over = 0
+food_present = 1
 
-
-
-score_position = [60, height+p_height]
+score_position = [60, 800+20]
 points = 0
 
 def printparty():
@@ -37,19 +41,14 @@ def printparty():
 
 # ------------------- Main Function -------------------
 def main():
-    game_over = 0
-    food_present = 1
-    prev_x = 20
-    prev_y = 20
+    running = True
+    global points
     global object_direction
     global object_h_v
     snake_len = 1 #snake starts with length of 1 unit
-
-    running = True
-    snake = SNAKE(400, 400, [100],[100]) #instantiate player snake
-    dot = Food(random.randrange(0,height, snake_step),random.randrange(0,width,snake_step))
     
-
+    snake = SNAKE([100],[100]) #instantiate player snake
+    dot = generate_food(snake.body_x[0], snake.body_y[0]) #generate first food chunk
     while running:
         window.fill((0,0,0)) #Clear Screen
         collision(snake.body_x[0], snake.body_y[0],dot.x, dot.y)
@@ -69,6 +68,9 @@ def main():
         prev_x = snake.body_x[0] #Previous head position
         prev_y = snake.body_y[0] #Previous head position
         
+        #
+
+        
         ## --- Food object ---
         food_object = (dot.x, dot.y,p_width,p_height)
         if food_present == 0:
@@ -77,10 +79,13 @@ def main():
             snake.body_y.insert(prev_y,1)
             #snake.body_y.append(prev_y)
             del dot
-            dot = generate_food()
+            dot = generate_food(snake.body_x[0], snake.body_y[0])
         snake.body_x.pop() #remove last object
         snake.body_y.pop() #remove last object
 
+
+            
+        
         # --- Graphics ---
         for i in range(snake_len):
             pygame.draw.rect(window, color, (snake.body_x[i], snake.body_y[i], p_width, p_height)) #draw snake head
@@ -118,13 +123,9 @@ def main():
                 elif event.key == pygame.K_d:
                     object_direction = 1
                     object_h_v = 0
-                elif event.key == pygame.K_r:
-                    running = False
-                    main()
+
 
 # ------------------- Additional Functions -------------------
-
-
 def generate_graphics(border_height, border_width, pixel_height, pixel_width,food_obj): 
     for i in range(border_width): #Draw game border
         for j in range (border_height):
@@ -133,7 +134,7 @@ def generate_graphics(border_height, border_width, pixel_height, pixel_width,foo
                 pygame.draw.rect(window,color,border) 
                 pygame.draw.rect(window,color,food_obj)
 
-def generate_food():
+def generate_food(obj_x, obj_y):
     global p_height
     global p_width
     global height
@@ -143,6 +144,8 @@ def generate_food():
 
 
     food = Food(random.randrange(p_height,active_vert, snake_step),random.randrange(p_width,active_hoz,snake_step))
+    if food.x == obj_x and food.y == obj_y:
+        generate_food(obj_x, obj_y)
     food_present = 1
     return food
 
@@ -215,9 +218,7 @@ def collision(object_x, object_y, food_x, food_y):
 #Create Snake class to allow for the spawning of the snake object
 class SNAKE:
     """define snake class to support more snakes in the future"""
-    def __init__(self, head_x,head_y, body_x,body_y):
-        self.head_x = head_x
-        self.head_y = head_y
+    def __init__(self, body_x,body_y):
         self.body_x = body_x
         self.body_y = body_y
 

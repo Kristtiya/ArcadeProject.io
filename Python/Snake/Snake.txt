@@ -21,5 +21,7 @@ _____________________________________________________
 "pixel" size: 20x20
 
 current issue:
+- Food collision no longer works.
+
 RESOLVED: Reset not working- when game is reset, then the escape and x button no longer
                    function properly and just reset the game
