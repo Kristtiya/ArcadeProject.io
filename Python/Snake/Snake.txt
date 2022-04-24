@@ -1,11 +1,11 @@
 What Happens:
-- snake represented by dots
-- Fruit represented by dot
-- Snake moves with W, A, S, D
-- Fruit = +10 in score
-- Fruit generates at random points on map
-- When snake touches itself game over
-- when snaoke touches wall game over
+COMPLETED - snake represented by dots 
+COMPLETED - Fruit represented by dot
+COMPLETED - Snake moves with W, A, S, D
+COMPLETED - Fruit = +10 in score
+COMPLETED - Fruit generates at random points on map
+COMPLETED - When snake touches itself game over
+COMPLETED - when snaoke touches wall game over
 
 
 Game Functions needed:
@@ -19,3 +19,7 @@ Game Functions needed:
 _____________________________________________________
 
 "pixel" size: 20x20
+
+current issue:
+RESOLVED: Reset not working- when game is reset, then the escape and x button no longer
+                   function properly and just reset the game

@@ -5,34 +5,40 @@ import random
 pygame.init()
 pygame.font.init()
 
+# -- Window and game border
+p_height, p_width = 20,20 #Pixel dimensions
+width,height = 800, 800  # Window Dimensions
+window = pygame.display.set_mode([width,height+ 100]) #Create Window
+active_vert = height - p_height
+active_hoz = width - p_width
+border = (0,0,p_width,p_height) # Active game border
 
+
+# -- Color and Text
+color = (255, 255, 255)                                #color white
+POKEFONT32 = pygame.font.Font("PokemonGBfont.ttf", 32) #Font size 32
+POKEFONT50 = pygame.font.Font("PokemonGBfont.ttf", 50) #Font size 50
+
+# -- Game Mechanic Parameters
+snake_step = p_height           # snake step size
+object_direction = 1            # 1 pos direction, -1 neg direction
+object_h_v = 0                  # 0 is horizontal, 1 is vertical
+
+
+
+score_position = [60, height+p_height]
+points = 0
 
 def printparty():
     print("Begin Ssslithering!")
 
-p_height, p_width = 20,20 #Pixel dimensions
-width,height = 800, 800  # Window Dimensions
-
-color = (255, 255, 255) #color white
-window = pygame.display.set_mode([width,height+ 100]) #Create Window
-
-snake_step = p_height #snake step size
-object_direction = 1 # 1 pos direction, -1 neg direction
-object_h_v = 0 # 0 is horizontal, 1 is vertical
-border = (0,0,p_width,p_height)
-game_over = 0
-food_present = 1
-POKEFONT = pygame.font.Font("PokemonGBfont.ttf", 32)
-score_position = [60, 800+20]
-points = 0
-active_vert = height - p_height
-active_hoz = width - p_width
 
 
 
-
-# Main Function
+# ------------------- Main Function -------------------
 def main():
+    game_over = 0
+    food_present = 1
     prev_x = 20
     prev_y = 20
     global object_direction
@@ -42,16 +48,16 @@ def main():
     running = True
     snake = SNAKE(400, 400, [100],[100]) #instantiate player snake
     dot = Food(random.randrange(0,height, snake_step),random.randrange(0,width,snake_step))
-    snake_object = [(snake.body_x[0], snake.body_y[0],p_width,p_height)]
     
 
     while running:
         window.fill((0,0,0)) #Clear Screen
         collision(snake.body_x[0], snake.body_y[0],dot.x, dot.y)
+        
+        for i in range(snake_len):
+            self_collision(snake.body_x[0], snake.body_y[0],snake.body_x[i],snake.body_y[i])
         snake.body_x = [snake.body_x[0]] + snake.body_x
         snake.body_y = [snake.body_y[0]] + snake.body_y
-        
-
 
         ## --- Snake Movement ---
         
@@ -62,9 +68,6 @@ def main():
         
         prev_x = snake.body_x[0] #Previous head position
         prev_y = snake.body_y[0] #Previous head position
-        
-        #
-
         
         ## --- Food object ---
         food_object = (dot.x, dot.y,p_width,p_height)
@@ -77,15 +80,7 @@ def main():
             dot = generate_food()
         snake.body_x.pop() #remove last object
         snake.body_y.pop() #remove last object
-        print(snake.body_x)
 
-
-        snake_object = (snake.body_x[0], snake.body_y[0], p_width, p_height)
-        
-        
-
-            
-        
         # --- Graphics ---
         for i in range(snake_len):
             pygame.draw.rect(window, color, (snake.body_x[i], snake.body_y[i], p_width, p_height)) #draw snake head
@@ -95,8 +90,12 @@ def main():
             
 
         # --- Generate Text ---
-        text_surface =  POKEFONT.render(str(points),False,color)
+        text_surface =  POKEFONT32.render(str(points),False,color)
+        
         window.blit(text_surface, score_position)
+        if game_over:
+            text_surface =  POKEFONT50.render("GAME OVER",False,[255,0,0])
+            window.blit(text_surface, (width/4,height/2))
         pygame.display.update() # refresh graphics
         
         
@@ -119,6 +118,11 @@ def main():
                 elif event.key == pygame.K_d:
                     object_direction = 1
                     object_h_v = 0
+                elif event.key == pygame.K_r:
+                    running = False
+                    main()
+
+# ------------------- Additional Functions -------------------
 
 
 def generate_graphics(border_height, border_width, pixel_height, pixel_width,food_obj): 
@@ -141,6 +145,26 @@ def generate_food():
     food = Food(random.randrange(p_height,active_vert, snake_step),random.randrange(p_width,active_hoz,snake_step))
     food_present = 1
     return food
+
+def self_collision(object_x, object_y,body_x, body_y):
+    global snake_step
+    global game_over 
+    global object_direction
+    global object_h_v
+
+    if object_y == body_y and (object_x == body_x + p_width) and object_direction == -1 and object_h_v == 0:
+        snake_step = 0
+        game_over = 1
+    elif object_y == body_y and (object_x == body_x - p_width) and object_direction == 1 and object_h_v == 0:
+        snake_step = 0
+        game_over = 1
+    elif object_x == body_x and (object_y == body_y + p_height) and object_direction == -1 and object_h_v == 1:
+        snake_step = 0
+        game_over = 1
+    elif object_x == body_x and (object_y == body_y - p_height) and object_direction == 1 and object_h_v == 1:
+        snake_step = 0
+        game_over = 1
+
 
 def collision(object_x, object_y, food_x, food_y):
     global height
@@ -182,6 +206,9 @@ def collision(object_x, object_y, food_x, food_y):
     elif object_x == food_x and (object_y == food_y - p_height) and object_direction == 1 and object_h_v == 1:
         points += 10
         food_present = 0
+    
+
+
 
 #Classes
 
