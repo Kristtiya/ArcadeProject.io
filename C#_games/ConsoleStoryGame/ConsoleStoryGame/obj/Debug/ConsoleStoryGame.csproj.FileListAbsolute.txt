@@ -1,0 +1,7 @@
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\bin\Debug\ConsoleStoryGame.exe.config
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\bin\Debug\ConsoleStoryGame.exe
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\bin\Debug\ConsoleStoryGame.pdb
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\obj\Debug\ConsoleStoryGame.csproj.AssemblyReference.cache
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\obj\Debug\ConsoleStoryGame.csproj.CoreCompileInputs.cache
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\obj\Debug\ConsoleStoryGame.exe
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\ConsoleStoryGame\ConsoleStoryGame\obj\Debug\ConsoleStoryGame.pdb

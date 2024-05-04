@@ -1,0 +1,7 @@
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\obj\Debug\LearningConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\obj\Debug\LearningConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\bin\Debug\LearningConsoleApp.exe.config
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\bin\Debug\LearningConsoleApp.exe
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\bin\Debug\LearningConsoleApp.pdb
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\obj\Debug\LearningConsoleApp.exe
+C:\Users\Kritikat\Desktop\ArcadeProject\C#_games\LearningConsoleApp\LearningConsoleApp\obj\Debug\LearningConsoleApp.pdb
