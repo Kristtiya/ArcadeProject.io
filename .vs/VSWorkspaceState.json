@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\C#_games",
     "\\C#_games\\LearningConsoleApp",
     "\\C#_games\\LearningConsoleApp\\LearningConsoleApp",
-    "\\C_plus_plus"
+    "\\C_plus_plus",
+    "\\C_plus_plus\\PracticeHW"
   ],
-  "SelectedNode": "\\C#_games\\LearningConsoleApp\\LearningConsoleApp\\LearningConsoleApp.csproj",
+  "SelectedNode": "\\C_plus_plus\\PracticeHW",
   "PreviewInSolutionExplorer": false
 }

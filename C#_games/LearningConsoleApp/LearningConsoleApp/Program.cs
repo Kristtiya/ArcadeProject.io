@@ -14,7 +14,7 @@ namespace HelloWorld
         {
             Console.WriteLine("Hello World!");
             string name = "Kris";
-            int age = 23;
+            int age = 123;
             Console.WriteLine("Name: " + name);
             Console.WriteLine("Age: " + age);
         }

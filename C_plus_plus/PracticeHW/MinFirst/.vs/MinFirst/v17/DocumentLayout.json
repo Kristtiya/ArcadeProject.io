@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Kritikat\\Desktop\\ArcadeProject\\C_plus_plus\\PracticeHW\\MinFirst\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12E6CB8E-7A50-46AA-BD82-9BF5ED4B4D07}|MinFirst\\MinFirst.vcxproj|C:\\Users\\Kritikat\\Desktop\\ArcadeProject\\C_plus_plus\\PracticeHW\\MinFirst\\MinFirst\\MinFirst.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{12E6CB8E-7A50-46AA-BD82-9BF5ED4B4D07}|MinFirst\\MinFirst.vcxproj|solutionrelative:MinFirst\\MinFirst.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MinFirst.cpp",
+              "DocumentMoniker": "C:\\Users\\Kritikat\\Desktop\\ArcadeProject\\C_plus_plus\\PracticeHW\\MinFirst\\MinFirst\\MinFirst.cpp",
+              "RelativeDocumentMoniker": "MinFirst\\MinFirst.cpp",
+              "ToolTip": "C:\\Users\\Kritikat\\Desktop\\ArcadeProject\\C_plus_plus\\PracticeHW\\MinFirst\\MinFirst\\MinFirst.cpp*",
+              "RelativeToolTip": "MinFirst\\MinFirst.cpp*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-15T02:04:03.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
